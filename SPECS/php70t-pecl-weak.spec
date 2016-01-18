@@ -68,7 +68,7 @@ EOF
 # Install XML package description
 # use 'name' rather than 'pecl_name' to avoid conflict with pear extensions
 %{__mkdir_p} %{buildroot}%{pecl_xmldir}
-%{__install} -m 644 ../package.xml %{buildroot}%{pecl_xmldir}/%{pecl_name}.xml
+# %{__install} -m 644 ../package.xml %{buildroot}%{pecl_xmldir}/%{pecl_name}.xml
 
 
 %clean
@@ -76,7 +76,7 @@ EOF
 
 
 %post
-%{__pecl} install --nodeps --soft --force --register-only --nobuild %{pecl_xmldir}/%{pecl_name}.xml >/dev/null || :
+# %{__pecl} install --nodeps --soft --force --register-only --nobuild %{pecl_xmldir}/%{pecl_name}.xml >/dev/null || :
 
 
 %postun
@@ -90,7 +90,7 @@ fi
 %doc %{pecl_name}-%{version}/README.md %{pecl_name}-%{version}/LICENSE %{pecl_name}-%{version}/CREDITS %{pecl_name}-%{version}/EXPERIMENTAL
 %config(noreplace) %{_sysconfdir}/php.d/%{pecl_name}.ini
 %{php_extdir}/%{pecl_name}.so
-%{pecl_xmldir}/%{pecl_name}.xml
+# %{pecl_xmldir}/%{pecl_name}.xml
 
 
 %changelog
